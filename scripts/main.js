@@ -1,16 +1,5 @@
 // ============================
-// KONFIGURACJA EMAILJS
-// ============================
-// Podmień na swoje dane z EmailJS
-const SERVICE_ID = "service_x02l3ox";
-const TEMPLATE_ID_CONTACT = "template_gfviu7j"; // <-- ID szablonu dla formularza kontaktowego
-const TEMPLATE_ID_CV = "TWÓJ_TEMPLATE_ID_CV"; // <-- ID szablonu dla powiadomienia o pobraniu CV
-const PUBLIC_KEY = "uy6SDlhVlaRPl1vDg";
-
-// Inicjalizacja EmailJS
-(function() {
-  emailjs.init(PUBLIC_KEY);
-})();
+// ...usunięto EmailJS, cała obsługa maili jest w backendzie Nodemailer...
 
 // ============================
 // FORMULARZ KONTAKTOWY
@@ -22,8 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      const hCaptchaResponse = document.querySelector('[name="h-captcha-response"]').value;
-      const subject = this.querySelector('[name="title"]').value.trim();
+        const hCaptchaResponse = this.querySelector('[name="h-captcha-response"]').value;
+        const subject = this.querySelector('[name="subject"]').value.trim();
 
       if (!hCaptchaResponse) {
         alert("❌ Potwierdź, że nie jesteś robotem (CAPTCHA).");
@@ -35,9 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // Pobierz dane z formularza
-      const from_name = this.querySelector('[name="name"]').value;
-      const reply_to = this.querySelector('[name="email"]').value;
-      const message = this.querySelector('[name="message"]').value;
+        const from_name = this.querySelector('[name="from_name"]').value;
+        const reply_to = this.querySelector('[name="reply_to"]').value;
+        const message = this.querySelector('[name="message"]').value;
 
       fetch("https://portfolio-rho-five-44.vercel.app/api/sendMail", {
         method: "POST",
@@ -75,29 +64,28 @@ function notifyDownload() {
     email: "noreply@portfolio.com"
   };
 
-  // Wyślij powiadomienie o pobraniu CV przez backend
-  fetch("https://twoja-nazwa-projektu.vercel.app/api/sendMail", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      from_name: "Portfolio",
-      reply_to: "noreply@portfolio.com",
-      subject: "CV Download",
-      message: "📥 Ktoś właśnie pobrał Twoje CV!",
-      template_id: "cv" // identyfikator do backendu, backend wybierze odpowiedni template
+    fetch("https://twoja-nazwa-projektu.vercel.app/api/sendMail", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        from_name: "Portfolio",
+        reply_to: "noreply@portfolio.com",
+        subject: "CV Download",
+        message: "📥 Ktoś właśnie pobrał Twoje CV!",
+        template_id: "cv"
+      })
     })
-  })
-  .then(res => res.json())
-  .then(data => {
-    if (data.success) {
-      console.log("✅ Powiadomienie o pobraniu CV wysłane.");
-    } else {
-      console.error("❌ Błąd przy wysyłaniu powiadomienia:", data.error);
-    }
-  })
-  .catch((error) => {
-    console.error("❌ Błąd przy wysyłaniu powiadomienia:", error);
-  });
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        console.log("✅ Powiadomienie o pobraniu CV wysłane.");
+      } else {
+        console.error("❌ Błąd przy wysyłaniu powiadomienia:", data.error);
+      }
+    })
+    .catch((error) => {
+      console.error("❌ Błąd przy wysyłaniu powiadomienia:", error);
+    });
 }
 
 // Udostępnij funkcję w globalnym scope

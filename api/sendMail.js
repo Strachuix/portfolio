@@ -1,40 +1,40 @@
 // api/sendMail.js
+import nodemailer from 'nodemailer';
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  // Tu obsłuż EmailJS lub inny serwis mailowy, używając kluczy z ENV
   const { from_name, reply_to, subject, message, template_id } = req.body;
 
-  // Wybierz odpowiedni template_id na podstawie parametru z frontendu
-  let selectedTemplateId = process.env.EMAILJS_TEMPLATE_ID_KONTAKT;
-  if (template_id === "cv") {
-    selectedTemplateId = process.env.EMAILJS_TEMPLATE_ID_CV;
+  // Wybierz temat maila na podstawie template_id
+  let mailSubject = subject;
+  if (template_id === 'cv') {
+    mailSubject = 'Powiadomienie o pobraniu CV';
   }
 
-  try {
-    const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        service_id: process.env.EMAILJS_SERVICE_ID,
-        template_id: selectedTemplateId,
-        user_id: process.env.EMAILJS_PUBLIC_KEY,
-        template_params: { from_name, reply_to, subject, message }
-      })
-    });
-
-    const responseText = await response.text();
-    console.log('EmailJS response:', response.status, responseText);
-
-    if (response.ok) {
-      res.status(200).json({ success: true, emailjs: responseText });
-    } else {
-      res.status(500).json({ error: responseText });
+  // Konfiguracja transportu SMTP (np. Gmail, Mailgun, SendGrid)
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: 465,
+    secure: true,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS
     }
-  } catch (err) {
-    console.error('Fetch error:', err);
-    res.status(500).json({ error: err.message });
+  });
+
+  try {
+    await transporter.sendMail({
+      from: `"${from_name}" <${reply_to}>`,
+      to: process.env.MAIL_TO, // Twój e-mail odbiorcy
+      subject: mailSubject,
+      text: message
+    });
+    res.status(200).json({ success: true });
+  } catch (error) {
+    console.error('Mail send error:', error);
+    res.status(500).json({ error: error.message });
   }
 }
