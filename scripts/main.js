@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
-        const hCaptchaResponse = this.querySelector('[name="h-captcha-response"]').value;
-        const subject = this.querySelector('[name="subject"]').value.trim();
+  const hCaptchaResponse = this.querySelector('[name="h-captcha-response"]').value;
+  const subject = this.querySelector('[name="title"]').value.trim();
 
       if (!hCaptchaResponse) {
         alert("❌ Potwierdź, że nie jesteś robotem (CAPTCHA).");
@@ -24,9 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // Pobierz dane z formularza
-        const from_name = this.querySelector('[name="from_name"]').value;
-        const reply_to = this.querySelector('[name="reply_to"]').value;
-        const message = this.querySelector('[name="message"]').value;
+    const from_name = this.querySelector('[name="name"]').value;
+    const reply_to = this.querySelector('[name="email"]').value;
+    const message = this.querySelector('[name="message"]').value;
 
       fetch("https://portfolio-rho-five-44.vercel.app/api/sendMail", {
         method: "POST",
