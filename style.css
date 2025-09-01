@@ -1,0 +1,295 @@
+/* =============================
+   RESET + BAZA
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  background: #121212; /* Ciemne tło */
+  color: #e5e5e5;
+}
+
+h1, h2 {
+  margin-bottom: 1rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* =============================
+   HERO
+============================= */
+#hero {
+  background: linear-gradient(135deg, #00b894, #6c5ce7);
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+#hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+
+#hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: #f1f2f6;
+}
+
+#hero .buttons a {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 14px 28px;
+  background: #2d3436;
+  color: #00cec9;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 2px solid #00cec9;
+  transition: 0.3s;
+}
+
+#hero .buttons a:hover {
+  background: #00cec9;
+  color: #121212;
+}
+
+/* =============================
+   SEKCJE (OGÓLNE)
+============================= */
+section {
+  margin-top: 40px;
+}
+
+#about p {
+  font-size: 1.1rem;
+  color: #dfe6e9;
+}
+
+/* =============================
+   SKILLS + EXPERIENCE
+============================= */
+#skills li, #experience li {
+  background: #1e1e1e;
+  margin: 10px 0;
+  padding: 14px;
+  border-radius: 8px;
+  border-left: 4px solid #6c5ce7; /* akcent kolorystyczny */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  transition: transform 0.2s;
+}
+
+#skills li:hover, #experience li:hover {
+  transform: translateX(5px);
+  border-left-color: #00cec9;
+}
+
+/* Siatka 3 kolumn */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+/* Styl grupy */
+.skills-group h3 {
+  color: #00cec9;
+  margin-bottom: 12px;
+  border-left: 3px solid #6c5ce7;
+  padding-left: 8px;
+  font-size: 1.2rem;
+}
+
+.skills-group ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-group li {
+  background: #1e1e1e;
+  margin: 6px 0;
+  padding: 10px;
+  border-radius: 6px;
+  border-left: 3px solid #00cec9;
+  transition: transform 0.2s, border-color 0.3s;
+}
+
+.skills-group li:hover {
+  transform: translateX(5px);
+  border-left-color: #ffeaa7;
+}
+
+
+.skills-group {
+  margin-bottom: 30px;
+}
+
+.skills-group h3 {
+  color: #00cec9;
+  margin-bottom: 10px;
+  border-left: 3px solid #6c5ce7;
+  padding-left: 8px;
+}
+
+.skills-group ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-group li {
+  background: #1e1e1e;
+  margin: 6px 0;
+  padding: 10px;
+  border-radius: 6px;
+  border-left: 3px solid #00cec9;
+  transition: transform 0.2s, border-color 0.3s;
+}
+
+.skills-group li:hover {
+  transform: translateX(5px);
+  border-left-color: #ffeaa7;
+}
+
+
+/* =============================
+   PROJECTS
+============================= */
+#projects p {
+  text-align: center;
+  color: #b2bec3;
+  font-style: italic;
+}
+
+/* =============================
+   DEVLOG
+============================= */
+#notesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.note {
+  background: #1e1e1e;
+  border: 2px solid #6c5ce7;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: transform 0.2s, border-color 0.3s;
+}
+
+.note:hover {
+  transform: translateY(-5px);
+  border-color: #00cec9;
+}
+
+.note-date {
+  font-size: 0.9rem;
+  color: #ffeaa7;
+  margin-bottom: 6px;
+}
+
+.note-title {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  color: #00cec9;
+}
+
+.note-project {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: #74b9ff;
+}
+
+.note-desc {
+  font-size: 0.95rem;
+  color: #dfe6e9;
+}
+
+/* =============================
+   CONTACT FORM
+============================= */
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#contact input, 
+#contact textarea, 
+#contact button {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  font-size: 1rem;
+  background: #1e1e1e;
+  color: #e5e5e5;
+}
+
+#contact button {
+  background: linear-gradient(135deg, #6c5ce7, #00cec9);
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#contact button:hover {
+  background: linear-gradient(135deg, #00cec9, #6c5ce7);
+  transform: scale(1.05);
+}
+
+.socials {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.socials a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #ffeaa7;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  color: #00cec9;
+}
+
+/* =============================
+   FOOTER
+============================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #1e1e1e;
+  font-size: 0.9rem;
+  color: #b2bec3;
+}
+
+/* =============================
+   RESPONSYWNOŚĆ
+============================= */
+@media (max-width: 600px) {
+  #hero h1 {
+    font-size: 2.2rem;
+  }
+  #hero p {
+    font-size: 1rem;
+  }
+  section {
+    padding: 40px 15px;
+  }
+}
