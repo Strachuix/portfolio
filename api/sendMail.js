@@ -13,21 +13,28 @@ export default async function handler(req, res) {
     selectedTemplateId = process.env.EMAILJS_TEMPLATE_ID_CV;
   }
 
-  const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      service_id: process.env.EMAILJS_SERVICE_ID,
-      template_id: selectedTemplateId,
-      user_id: process.env.EMAILJS_PUBLIC_KEY,
-      template_params: { from_name, reply_to, subject, message }
-    })
-  });
+  try {
+    const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        service_id: process.env.EMAILJS_SERVICE_ID,
+        template_id: selectedTemplateId,
+        user_id: process.env.EMAILJS_PUBLIC_KEY,
+        template_params: { from_name, reply_to, subject, message }
+      })
+    });
 
-  if (response.ok) {
-    res.status(200).json({ success: true });
-  } else {
-    const error = await response.text();
-    res.status(500).json({ error });
+    const responseText = await response.text();
+    console.log('EmailJS response:', response.status, responseText);
+
+    if (response.ok) {
+      res.status(200).json({ success: true, emailjs: responseText });
+    } else {
+      res.status(500).json({ error: responseText });
+    }
+  } catch (err) {
+    console.error('Fetch error:', err);
+    res.status(500).json({ error: err.message });
   }
 }
