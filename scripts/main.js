@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // Pobierz dane z formularza
-      const from_name = this.querySelector('[name="from_name"]').value;
-      const reply_to = this.querySelector('[name="reply_to"]').value;
+      const from_name = this.querySelector('[name="name"]').value;
+      const reply_to = this.querySelector('[name="email"]').value;
       const message = this.querySelector('[name="message"]').value;
 
       fetch("https://portfolio-rho-five-44.vercel.app/api/sendMail", {
