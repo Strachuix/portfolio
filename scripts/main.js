@@ -1,4 +1,40 @@
 // ============================
+// PROJEKTY – ŁADOWANIE Z JSONA
+async function loadProjects() {
+  try {
+    const response = await fetch("posts/projects.json");
+    if (!response.ok) throw new Error("Błąd wczytywania projects.json");
+
+    const projects = await response.json();
+    const container = document.getElementById("projectsContainer");
+
+    if (container) {
+      container.innerHTML = "";
+      projects.forEach(project => {
+        const projectEl = document.createElement("div");
+        projectEl.classList.add("project-card");
+        let demoBtn = "";
+        if (project.deploy) {
+          demoBtn = `<a href="${project.deploy}" target="_blank" class="project-link project-demo">Demo</a>`;
+        }
+        projectEl.innerHTML = `
+          <div class="project-title">${project.name}</div>
+          <div class="project-desc">${project.desc}</div>
+          <div class="project-meta">
+            <a href="${project.github}" target="_blank" class="project-link">GitHub</a>
+            ${demoBtn}
+            <span class="project-tech">${project.tech.join(", ")}</span>
+          </div>
+        `;
+        container.appendChild(projectEl);
+      });
+    }
+  } catch (error) {
+    console.error("❌ Błąd ładowania projektów:", error);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadProjects);
 // ...usunięto EmailJS, cała obsługa maili jest w backendzie Nodemailer...
 
 // ============================
