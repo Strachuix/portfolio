@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const reply_to = this.querySelector('[name="email"]').value;
     const message = this.querySelector('[name="message"]').value;
 
-      fetch("https://portfolio-rho-five-44.vercel.app/api/sendMail", {
+      fetch("https://portfolio-rho-five-44.vercel.app/api/sendMail.js", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
