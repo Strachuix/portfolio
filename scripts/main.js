@@ -140,6 +140,10 @@ async function loadNotes() {
 
     if (container) {
       container.innerHTML = "";
+      if (!notes.length) {
+        container.innerHTML = '<div class="note-empty">Brak wpisów DevLog. Pojawią się już wkrótce!</div>';
+        return;
+      }
       notes.forEach(note => {
         const noteEl = document.createElement("div");
         noteEl.classList.add("note");

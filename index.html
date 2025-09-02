@@ -1,110 +1,127 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio – Stanisław Pokropek</title>
-  <link rel="stylesheet" href="style.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio – Stanisław Pokropek</title>
+    <link rel="stylesheet" href="style.css" />
 
-  <!-- EmailJS SDK -->
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-  <!-- hCaptcha -->
-  <script src="https://hcaptcha.com/1/api.js" async defer></script>
-</head>
-<body>
-  <!-- Hero -->
-  <header id="hero">
-    <h1>Stanisław Pokropek</h1>
-    <p>Backend Developer • PHP • Symfony • Docker • React</p>
-    <div class="buttons">
-      <a href="#projects">Zobacz projekty</a>
-      <button onclick="downloadCV('pl')">📥 Pobierz CV (PL)</button>
-      <button onclick="downloadCV('en')">📥 Pobierz CV (EN)</button>
-    </div>
-  </header>
+    <!-- hCaptcha -->
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+  </head>
+  <body>
+    <!-- Hero -->
+    <header id="hero">
+      <h1>Stanisław Pokropek</h1>
+      <p>Backend Developer • PHP • Symfony • Docker • React</p>
+      <div class="buttons">
+        <a href="#projects">Zobacz projekty</a>
+        <button onclick="downloadCV('pl')">📥 Pobierz CV (PL)</button>
+        <button onclick="downloadCV('en')">📥 Pobierz CV (EN)</button>
+      </div>
+    </header>
 
-  <!-- About -->
-  <section id="about">
-    <h2>O mnie</h2>
-    <p>
-      Cześć! Nazywam się Stanisław Pokropek. Jestem pasjonatem informatyki, backend developerem oraz studentem Akademii Ekonomiczno-Humanistycznej w Warszawie na kierunku Informatyka (specjalizacje: aplikacje webowe i mobilne).
-    </p>
-    <p>
-      Od 2022 roku zdobywam doświadczenie zawodowe, realizując projekty komercyjne i charytatywne. Pracowałem jako Backend Developer w Asterisk-Dev, gdzie tworzyłem nowoczesne aplikacje webowe typu PWA, integrowałem urządzenia zewnętrzne, budowałem dedykowane API oraz systemy raportowe. Mam doświadczenie w obsłudze systemów, raportowaniu i kontakcie z klientem.
-    </p>
-    <p>
-      Ukończyłem Technikum Elektroniczne nr 1 w Warszawie jako Technik Informatyk, a obecnie rozwijam się w kierunku inżyniera. Posiadam certyfikaty z zakresu kierowania ruchem drogowym, programowania w Unreal Engine oraz fotografii z drona.
-    </p>
-    <p>
-      Poza programowaniem zajmuję się projektowaniem grafik (logotypy, plakaty, banery), prowadzę warsztaty kreatywne dla dzieci i dorosłych, a w wolnym czasie żegluję, żongluję, układam kostki Rubika, jeżdżę na nartach i chodzę po górach. Uwielbiam sport, DIY oraz dzielenie się wiedzą z innymi.
-    </p>
-    <p>
-      Zapraszam do kontaktu i współpracy!
-    </p>
-  </section>
+    <!-- About -->
+    <section id="about">
+      <h2>O mnie</h2>
+      <p>
+        Cześć! Nazywam się Stanisław Pokropek. Jestem pasjonatem informatyki,
+        backend developerem oraz studentem Akademii Ekonomiczno-Humanistycznej w
+        Warszawie na kierunku Informatyka (specjalizacje: aplikacje webowe i
+        mobilne).
+      </p>
+      <p>
+        Od 2022 roku zdobywam doświadczenie zawodowe, realizując projekty
+        komercyjne i charytatywne. Pracowałem jako Backend Developer w
+        Asterisk-Dev, gdzie tworzyłem nowoczesne aplikacje webowe typu PWA,
+        integrowałem urządzenia zewnętrzne, budowałem dedykowane API oraz
+        systemy raportowe. Mam doświadczenie w obsłudze systemów, raportowaniu i
+        kontakcie z klientem.
+      </p>
+      <p>
+        Ukończyłem Technikum Elektroniczne nr 1 w Warszawie jako Technik
+        Informatyk, a obecnie rozwijam się w kierunku inżyniera. Posiadam
+        certyfikaty z zakresu kierowania ruchem drogowym, programowania w Unreal
+        Engine oraz fotografii z drona.
+      </p>
+      <p>
+        Poza programowaniem zajmuję się projektowaniem grafik (logotypy,
+        plakaty, banery), prowadzę warsztaty kreatywne dla dzieci i dorosłych, a
+        w wolnym czasie żegluję, żongluję, układam kostki Rubika, jeżdżę na
+        nartach i chodzę po górach. Uwielbiam sport, DIY oraz dzielenie się
+        wiedzą z innymi.
+      </p>
+      <p>Zapraszam do kontaktu i współpracy!</p>
+    </section>
 
-  <!-- Skills -->
-<section id="skills">
-  <h2>Umiejętności</h2>
-  
-  <div class="skills-grid">
-    <div class="skills-group">
-      <h3>Backend</h3>
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Umiejętności</h2>
+
+      <div class="skills-grid">
+        <div class="skills-group">
+          <h3>Backend</h3>
+          <ul>
+            <li>PHP 8.1</li>
+            <li>Symfony</li>
+            <li>MariaDB / MySQL</li>
+            <li>API / AJAX</li>
+          </ul>
+        </div>
+
+        <div class="skills-group">
+          <h3>Frontend</h3>
+          <ul>
+            <li>JavaScript</li>
+            <li>jQuery</li>
+            <li>Bootstrap</li>
+            <li>Twig</li>
+          </ul>
+        </div>
+
+        <div class="skills-group">
+          <h3>DevOps / Tools</h3>
+          <ul>
+            <li>Docker</li>
+            <li>Linux Terminal</li>
+            <li>Git</li>
+            <li>PWA</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <h2>Doświadczenie</h2>
       <ul>
-        <li>PHP 8.1</li>
-        <li>Symfony</li>
-        <li>MariaDB / MySQL</li>
-        <li>API / AJAX</li>
+        <li>
+          <b>UPS (2024 – 2025)</b> – wsparcie IT, raporty, komunikacja z
+          klientami
+        </li>
+        <li>
+          <b>Asterisk-Dev (2022 – 2024)</b> – integracje, raporty, aplikacje
+          webowe
+        </li>
+        <li><b>Geotechnology (2021)</b> – serwis komputerów, administracja</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="skills-group">
-      <h3>Frontend</h3>
-      <ul>
-        <li>JavaScript</li>
-        <li>jQuery</li>
-        <li>Bootstrap</li>
-        <li>Twig</li>
-      </ul>
-    </div>
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projekty</h2>
+      <div id="projectsContainer"></div>
+    </section>
 
-    <div class="skills-group">
-      <h3>DevOps / Tools</h3>
-      <ul>
-        <li>Docker</li>
-        <li>Linux Terminal</li>
-        <li>Git</li>
-        <li>PWA</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-
-
-  <!-- Experience -->
-  <section id="experience">
-    <h2>Doświadczenie</h2>
-    <ul>
-      <li><b>UPS (2024 – 2025)</b> – wsparcie IT, raporty, komunikacja z klientami</li>
-      <li><b>Asterisk-Dev (2022 – 2024)</b> – integracje, raporty, aplikacje webowe</li>
-      <li><b>Geotechnology (2021)</b> – serwis komputerów, administracja</li>
-    </ul>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects">
-  <h2>Projekty</h2>
-  <div id="projectsContainer"></div>
-  </section>
-
-  <!-- DevLog -->
-  <section id="devlog">
-    <h2>DevLog</h2>
-    <div id="notesContainer" class="devlog-grid">
-      <!-- Przykładowe kafelki, reszta generowana przez JS -->
-      <!--
+    <!-- DevLog -->
+    <section id="devlog">
+      <h2>DevLog</h2>
+      <div id="notesContainer" class="devlog-grid">
+        <!-- Przykładowe kafelki, reszta generowana przez JS -->
+        <!--
       <div class="note">
         <div class="note-avatar"><img src="assets/projects/api.svg" alt="API"></div>
         <div class="note-main">
@@ -116,18 +133,17 @@
           <div class="note-desc">Opis raportu produkcyjnego...</div>
         </div>
       </div>
-      -->
-    </div>
-  </section>
+      --></div>
+    </section>
 
-  <!-- Contact -->
-  <!-- <section id="contact">
+    <!-- Contact -->
+    <!-- <section id="contact">
     <h2>Kontakt</h2>
-    <form id="contactForm">
-  <input type="text" name="name" placeholder="Twoje imię" required />
-  <input type="email" name="email" placeholder="Twój e-mail" required />
-  <input type="text" name="title" placeholder="Tytuł wiadomości" required />
-  <textarea name="message" placeholder="Wiadomość" required></textarea>
+    <form id="contactForm" action="https://formspree.io/f/mjkeakkj" method="POST">
+      <input type="text" name="name" placeholder="Twoje imię" required />
+      <input type="email" name="email" placeholder="Twój e-mail" required />
+      <input type="text" name="title" placeholder="Tytuł wiadomości" required />
+      <textarea name="message" placeholder="Wiadomość" required></textarea>
 
       <div class="h-captcha" data-sitekey="5818d8c8-7578-4a58-a27a-517adb164b60" data-theme="dark"></div>
 
@@ -141,31 +157,35 @@
   </section> -->
     <div class="socials">
       <a href="https://github.com/Strachuix" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/stanisław-pokropek-33b852255/" target="_blank">LinkedIn</a>
+      <a
+        href="https://www.linkedin.com/in/stanisław-pokropek-33b852255/"
+        target="_blank"
+        >LinkedIn</a
+      >
     </div>
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Stanisław Pokropek – Portfolio</p>
-  </footer>
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Stanisław Pokropek – Portfolio</p>
+    </footer>
 
-  <!-- JS -->
-  <script src="scripts/main.js"></script>
-<script>
-function downloadCV(lang) {
-  let file = 'assets/cv/stanislaw-pokropek-cv.pdf';
-  let subject = 'CV Download';
-  if (lang === 'en') {
-    file = 'assets/cv/stanislaw-pokropek-cv-en.pdf';
-    subject = 'CV Download (EN)';
-  }
-  notifyDownload(subject);
-  const link = document.createElement('a');
-  link.href = file;
-  link.download = file.split('/').pop();
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
-</script>
-</body>
+    <!-- JS -->
+    <script src="scripts/main.js"></script>
+    <script>
+      function downloadCV(lang) {
+        let file = "assets/cv/stanislaw-pokropek-cv.pdf";
+        let subject = "CV Download";
+        if (lang === "en") {
+          file = "assets/cv/stanislaw-pokropek-cv-en.pdf";
+          subject = "CV Download (EN)";
+        }
+        notifyDownload(subject);
+        const link = document.createElement("a");
+        link.href = file;
+        link.download = file.split("/").pop();
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    </script>
+  </body>
 </html>
