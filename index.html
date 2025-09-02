@@ -19,9 +19,8 @@
     <p>Backend Developer • PHP • Symfony • Docker • React</p>
     <div class="buttons">
       <a href="#projects">Zobacz projekty</a>
-      <a href="assets/cv/stanislaw-pokropek-cv.pdf" 
-         download 
-         onclick="notifyDownload()">📥 Pobierz CV</a>
+      <button onclick="downloadCV('pl')">📥 Pobierz CV (PL)</button>
+      <button onclick="downloadCV('en')">📥 Pobierz CV (EN)</button>
     </div>
   </header>
 
@@ -124,5 +123,22 @@
 
   <!-- JS -->
   <script src="scripts/main.js"></script>
+<script>
+function downloadCV(lang) {
+  let file = 'assets/cv/stanislaw-pokropek-cv.pdf';
+  let subject = 'CV Download';
+  if (lang === 'en') {
+    file = 'assets/cv/stanislaw-pokropek-cv-en.pdf';
+    subject = 'CV Download (EN)';
+  }
+  notifyDownload(subject);
+  const link = document.createElement('a');
+  link.href = file;
+  link.download = file.split('/').pop();
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+</script>
 </body>
 </html>
