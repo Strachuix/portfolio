@@ -1,26 +1,3 @@
 [
-  {
-    "date": "2025-08-28",
-    "title": "Integracja EmailJS z hCaptcha",
-    "project": "Portfolio",
-    "desc": "Dodałem obsługę formularza z EmailJS i hCaptcha bez backendu, gotowe do hostingu na GitHub Pages."
-  },
-  {
-    "date": "2025-07-30",
-    "title": "Optymalizacja zapytań w Symfony",
-    "project": "Fete",
-    "desc": "Zredukowałem czas odpowiedzi API o 40% dzięki zastosowaniu JOIN FETCH i cache zapytań."
-  },
-  {
-    "date": "2025-06-15",
-    "title": "Docker Compose dla MariaDB",
-    "project": "Sklep Online",
-    "desc": "Stworzyłem konfigurację Docker Compose dla oddzielnej bazy danych, co uprościło zarządzanie kontenerami."
-  },
-  {
-    "date": "2025-05-05",
-    "title": "Responsywny układ w Bootstrapie",
-    "project": "Aplikacja Raportowa",
-    "desc": "Zaprojektowałem layout PWA oparty na Bootstrap Grid, w pełni responsywny na urządzeniach mobilnych."
-  }
+
 ]
