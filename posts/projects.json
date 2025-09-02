@@ -3,13 +3,14 @@
     "name": "Portfolio",
     "desc": "Moja strona portfolio z formularzem kontaktowym, DevLogiem i pobieraniem CV.",
     "github": "https://github.com/Strachuix/portfolio",
-    "tech": ["HTML", "CSS", "JavaScript", "Vercel"]
+    "deploy": "https://strachuix.github.io/portfolio",
+    "tech": ["HTML", "CSS", "JavaScript"]
   },
   {
     "name": "ToDo App",
     "desc": "Klasyczna Aplikacja ToDo z możliwością dodawania, edytowania i usuwania zadań.",
     "github": "https://github.com/Strachuix/todolist",
-    "deploy": "https://todolist-peach-five.vercel.app",
+    "deploy": "https://strachuix.github.io/todolist",
     "tech": ["JS", "JQuery", "HTML"]
   }
 ]
