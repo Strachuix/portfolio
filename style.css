@@ -96,7 +96,7 @@
 body {
   font-family: "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
-  background: #121212; /* Ciemne tło */
+  background: #222;
   color: #e5e5e5;
 }
 
@@ -169,7 +169,7 @@ section {
    SKILLS + EXPERIENCE
 ============================= */
 #skills li, #experience li {
-  background: #1e1e1e;
+  background: #1f1f1f;
   margin: 10px 0;
   padding: 14px;
   border-radius: 8px;
@@ -205,7 +205,7 @@ section {
 }
 
 .skills-group li {
-  background: #1e1e1e;
+  background: #1f1f1f;
   margin: 6px 0;
   padding: 10px;
   border-radius: 6px;
@@ -236,7 +236,7 @@ section {
 }
 
 .skills-group li {
-  background: #1e1e1e;
+  background: #1f1f1f;
   margin: 6px 0;
   padding: 10px;
   border-radius: 6px;
@@ -260,7 +260,7 @@ section {
 }
 
 .project-card {
-  background: #121212;
+  background: #1f1f1f;
   border: 2px solid #6c5ce7;
   border-radius: 14px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.15);
@@ -332,7 +332,7 @@ section {
 
 .note {
   gap: 4px;
-  background: #1e1e1e;
+  background: #1f1f1f;
   border: 2px solid #6c5ce7;
   display: flex;
   flex-direction: column;
@@ -429,7 +429,7 @@ section {
   border-radius: 6px;
   border: 1px solid #444;
   font-size: 1rem;
-  background: #1e1e1e;
+  background: #1f1f1f;
   color: #e5e5e5;
 }
 
@@ -470,7 +470,7 @@ section {
 footer {
   text-align: center;
   padding: 20px;
-  background: #1e1e1e;
+  background: #222;
   font-size: 0.9rem;
   color: #b2bec3;
 }
