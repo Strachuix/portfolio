@@ -2,6 +2,7 @@
   {
     "name": "Portfolio",
     "desc": "Moja strona portfolio z formularzem kontaktowym, DevLogiem i pobieraniem CV.",
+    "desc_en": "My portfolio website with contact form, DevLog and CV download.",
     "github": "https://github.com/Strachuix/portfolio",
     "deploy": "https://strachuix.github.io/portfolio",
     "tech": ["HTML", "CSS", "JavaScript"]
@@ -9,6 +10,7 @@
   {
     "name": "ToDo App",
     "desc": "Klasyczna Aplikacja ToDo z możliwością dodawania, edytowania i usuwania zadań.",
+    "desc_en": "Classic ToDo App with adding, editing and deleting tasks.",
     "github": "https://github.com/Strachuix/todolist",
     "deploy": "https://strachuix.github.io/todolist",
     "tech": ["JS", "JQuery", "HTML"]
