@@ -14,5 +14,13 @@
     "github": "https://github.com/Strachuix/todolist",
     "deploy": "https://strachuix.github.io/todolist",
     "tech": ["JS", "JQuery", "HTML"]
+  },
+    {
+    "name": "GymLog",
+    "desc": "Aplikacja PWA do śledzenia postępów na siłowni, dziennik traningowy, ale również statystylki, wykresy, kalkulator 1RM i wiele innych funkcji.",
+    "desc_en": "PWA application for tracking gym progress, training log, but also statistics, charts, 1RM calculator and many other features.",
+    "github": "https://github.com/Strachuix/gymlog",
+    "deploy": "https://gym-log-one.vercel.app",
+    "tech": ["JS", "HTML", "CSS", "Tailwind", "Chart.js"]
   }
 ]
